@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { customers, servicesData } from '../data/mockData';
 import { Pie } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import './CustomerDetailPage.css';
+import './CustomerDetail.css';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
