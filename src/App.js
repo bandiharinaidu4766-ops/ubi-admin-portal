@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import DashboardPage from './pages/DashboardPage';
 import CustomerDetailPage from './pages/CustomerDetailPage';
-// ఈ లైన్ తప్పనిసరిగా ఉండాలి
 import UsageOverviewPage from './pages/UsageOverviewPage'; 
 import './App.css';
 
@@ -14,9 +13,13 @@ function App() {
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/dashboard" element={<DashboardPage />} />
-          <Route path="/customer/:customerId" element={<CustomerDetailPage />} />
-          {/* ఈ రూట్ మిస్ అవ్వడం వల్లే మీకు ఎర్రర్ వస్తోంది */}
-          <Route path="/usage-overview" element={<UsageOverviewPage />} />
+          
+          {/* ✅ Customer Profile Route: "View" బటన్ నుండి వచ్చే "/user/profile/10001" లింక్‌కు సరిపోతుంది. */}
+          <Route path="/user/profile/:id" element={<CustomerDetailPage />} /> 
+
+          {/* ✅ Services Usage Route: "Services Usage" బటన్‌కు అనుగుణంగా మార్చబడింది. */}
+          <Route path="/services-overview" element={<UsageOverviewPage />} />
+          
         </Routes>
       </div>
     </Router>
